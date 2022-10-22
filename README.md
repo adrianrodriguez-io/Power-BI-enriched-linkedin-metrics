@@ -19,6 +19,9 @@ Once you have install all python libraries needed and created the tables in a Po
 <img src='images/snapshots posts content.png'></img>
 <img src='images/snapshots post metrics.png'></img>
 
+## Queries to use
+
+
 ## Next steps
 1. Once you get the data you will be able to develop a Power Bi or a Tablaeu dashbaord. 
 2. Do some text clustering in order to know wich kind of content resonate more with your connections and followers. 
