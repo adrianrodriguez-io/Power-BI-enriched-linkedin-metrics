@@ -16,8 +16,8 @@ https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers
 ## Data you get
 Once you have install all python libraries needed and created the tables in a PostgreSql database call linkedin you will get your linkedin posts metrics and content of your Linkedin posts in a timeframe basis of you choise (you can parametrize the timeframe in the RPA script, check that in the bottom of the script). 
 
-<img src='images/snapshots post metrics.png'></img>
 <img src='images/snapshots posts content.png'></img>
+<img src='images/snapshots post metrics.png'></img>
 
 ## Next steps
 1. Once you get the data you will be able to develop a Power Bi or a Tablaeu dashbaord. 
