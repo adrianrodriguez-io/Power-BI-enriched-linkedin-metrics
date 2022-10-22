@@ -19,7 +19,50 @@ Once you have install all python libraries needed and created the tables in a Po
 <img src='images/snapshots posts content.png'></img>
 <img src='images/snapshots post metrics.png'></img>
 
-## Queries to use
+## Queries
+1. Get posts content, last snapshot, total impressions, total reactions, and percentage of reactions/impressions. 
+select idpost, text, min(datetime) PostedDatetime, max(datetime) AS LastSnapshot, TO_CHAR(max(datetime) - min(datetime),'DD')::integer AS DaysSincePosted, max(impressions) Impressions, max(likes) + max(comments) + max(shares) Reactions, cast(max(likes) + max(comments) + max(shares) as float) / max(impressions) * 100 AS PercReactionsvsImpressions
+from (
+select max(p.idpost) as idpost, max(p.text) as text , m.datetime, m.impressions, m.likes, m.comments, m.shares
+from posts p 
+left join metrics m ON m.idpost = p.idpost
+group by m.datetime, m.impressions, m.likes, m.comments, m.shares
+) t 
+group by idpost , text
+order by min(datetime) desc 
+
+2. Posts metrics by timeframe basis
+SELECT
+idpost, 
+datetime, 
+to_char(datetime - lag(datetime, -1) over (partition by idpost order by datetime desc),'HH24MI')::integer AS MinutesLastSnapshot,
+CASE 
+WHEN impressions - lag(impressions, -1) over (partition by idpost order by datetime desc) IS NULL
+THEN impressions
+ELSE impressions - lag(impressions, -1) over (partition by idpost order by datetime desc)
+END AS Impressions,
+CASE 
+WHEN (likes+comments+shares) - lag((likes+comments+shares), -1) over (partition by idpost order by datetime desc) IS NULL
+THEN (likes+comments+shares)
+ELSE (likes+comments+shares) - lag((likes+comments+shares), -1) over (partition by idpost order by datetime desc) 
+END AS Reactions ,
+CASE 
+WHEN impressions - lag(impressions, -1) over (partition by idpost order by datetime desc) = 0 THEN 0
+ELSE
+    CASE 
+    WHEN (likes+comments+shares) - lag((likes+comments+shares), -1) over (partition by idpost order by datetime desc) IS NULL
+    THEN CAST((likes+comments+shares) AS FLOAT)
+    ELSE CAST( (likes+comments+shares) - lag((likes+comments+shares), -1) over (partition by idpost order by datetime desc) AS FLOAT)
+    END / 
+    CASE 
+    WHEN impressions - lag(impressions, -1) over (partition by idpost order by datetime desc) IS NULL
+    THEN impressions
+    ELSE impressions - lag(impressions, -1) over (partition by idpost order by datetime desc)
+    END 
+END AS PercReactionsOverImpressions
+from metrics
+where idpost = 6988150750157627392
+order by datetime desc
 
 
 ## Next steps
