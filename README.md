@@ -1,4 +1,4 @@
-# linkedin enriched posts metrics analysis
+# Linkedin enriched posts metrics data
 
 ##Challengue
 Currently, Linkedin doesn't provide good metrics about posts metrics, so anybody is able to know wich is the best time to post. So I wanted to do a better analysis of my Linkedin posts by developing a RPA python script based on using selenium python library in order to log into my account and scrap that info in a hourly basis. 
