@@ -11,6 +11,7 @@ In this github repository you will find a python script wich will log into your 
 2. Install the Selenium webdriver of you choise. You can find the link as following
 https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
 3. Create the tables needed in a linkedin PostgreSql database. Please find attached to this repository the Sql scripts for doing that. 
+4. If your machine is Windows, you can download any task scheduler software of your choise or use by default windows task scheduler and set a job scheduler for running execpython.bat file every 5 min. The RPA script will run if there the last snapshot taken is later than 15 min, otherwise it will be executed after 5 min and so on. Once the RPA start running it will be running for quite a lot of time so it will get the data in same session avoiding to log everytime the RPA script run in order to block your Linkedin account (or needed to pass a security check next time you log in).
 
 ##Data you get
 Once you have install all python libraries needed and created the tables in a PostgreSql database call linkedin you will get your linkedin posts metrics and content of your Linkedin posts in a timeframe basis of you choise (you can parametrize the timeframe in the RPA script, check that in the bottom of the script). 
