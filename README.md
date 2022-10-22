@@ -21,7 +21,9 @@ Once you have install all python libraries needed and created the tables in a Po
 
 ## Queries
 1. Get posts content, last snapshot, total impressions, total reactions, and percentage of reactions/impressions. 
-select idpost, text, min(datetime) PostedDatetime, max(datetime) AS LastSnapshot, TO_CHAR(max(datetime) - min(datetime),'DD')::integer AS DaysSincePosted, max(impressions) Impressions, max(likes) + max(comments) + max(shares) Reactions, cast(max(likes) + max(comments) + max(shares) as float) / max(impressions) * 100 AS PercReactionsvsImpressions
+
+
+SELECT idpost, text, min(datetime) PostedDatetime, max(datetime) AS LastSnapshot, TO_CHAR(max(datetime) - min(datetime),'DD')::integer AS DaysSincePosted, max(impressions) Impressions, max(likes) + max(comments) + max(shares) Reactions, cast(max(likes) + max(comments) + max(shares) as float) / max(impressions) * 100 AS PercReactionsvsImpressions
 from (
 select max(p.idpost) as idpost, max(p.text) as text , m.datetime, m.impressions, m.likes, m.comments, m.shares
 from posts p 
@@ -32,6 +34,7 @@ group by idpost , text
 order by min(datetime) desc 
 
 2. Posts metrics by timeframe basis
+
 SELECT
 idpost, 
 datetime, 
