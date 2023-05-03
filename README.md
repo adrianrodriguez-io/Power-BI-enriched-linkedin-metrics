@@ -1,6 +1,15 @@
 # Linkedin enriched posts metrics analysis
 
-## Challengue
+### Contents
+#### 1. Challengue and idea
+#### 2. What you wil find in this repository
+#### 3. Data workflow
+#### 4. Data visualization (Power BI)
+#### 5. Requirements
+#### 6. Data you get
+#### 7. SQL queries
+
+## Challengue and idea
 Currently (Nov 2022), Linkedin doesn't provide good metrics about posts, so anybody is able to know wich is the best time to post or the the lifetime of their posts. So I wanted to do a better analysis of my Linkedin posts by developing a RPA python script based on using selenium python library in order to log into my account and scrap that info in a hourly basis as well as being able to create a data visualization with Power BI. 
 
 ## What you will find in this repository
@@ -11,7 +20,10 @@ You can see as follows the a representation of the data workflow of this project
 
 <img width='400' height='300' src='https://github.com/adrianrodriguez-io/linkedin-rpa-python/blob/main/images/Linkedin%20Posts%20Enriched%20Metrics%20-%20Functional%20project.png'></img>
 
-## Data visualization
+## Data visualization (Power BI)
+As follows you can see a picture of the Power BI (check it out the embebed Power BI here) developed with the different charts where you can see a set of KPIs on the top of the visualization, as well as charts with total impressions by day, impressions by hour along the day (24h) and lifetime of the posts.
+
+<img width='600' height='400' src='https://github.com/adrianrodriguez-io/linkedin-rpa-python/blob/main/images/Power%20BI.png'></img>
 
 ## Requirements
 1. Install the different python libraries used for running the RPA python script. You will find that at the beginning of the .py script (in the jyputer notebook provided as well).
