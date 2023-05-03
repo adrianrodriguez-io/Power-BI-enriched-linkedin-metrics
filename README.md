@@ -1,7 +1,7 @@
 # Linkedin enriched posts metrics analysis
 
 ## Challengue
-Currently (Nov 2022), Linkedin doesn't provide good metrics about posts metrics, so anybody is able to know wich is the best time to post or the the lifetime of their posts. So I wanted to do a better analysis of my Linkedin posts by developing a RPA python script based on using selenium python library in order to log into my account and scrap that info in a hourly basis as well as being able to create a data visualization with Power BI. 
+Currently (Nov 2022), Linkedin doesn't provide good metrics about posts, so anybody is able to know wich is the best time to post or the the lifetime of their posts. So I wanted to do a better analysis of my Linkedin posts by developing a RPA python script based on using selenium python library in order to log into my account and scrap that info in a hourly basis as well as being able to create a data visualization with Power BI. 
 
 ## What you will find in this repository
 In this github repository you will find an embebed Power BI data visualization that you can access by clicking here and a python script (RPA) in order to get the data you need from Linkedin. All you need is to amend your email and password within the RPA python script which will log you into linkedin with your credentials and it will loop on a timeframe basis your linkedin posts metrics analytics pages in order to get snapshots of that and store the data into a PostgreSql database. Take into accout that you will need to install different modules required for running the RPA python script so please find that info as following in the requirements sections.
