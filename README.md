@@ -9,7 +9,7 @@ In this github repository you will find an embebed Power BI data visualization t
 ## Funcional document (Data workflow)
 You can see as follows the data workflow of this project in order to learn about the different steps involved.
 
-<img src='https://github.com/adrianrodriguez-io/linkedin-rpa-python/blob/main/images/Linkedin%20Posts%20Enriched%20Metrics%20-%20Functional%20project.png'></img>
+<img width='400' height='300' src='https://github.com/adrianrodriguez-io/linkedin-rpa-python/blob/main/images/Linkedin%20Posts%20Enriched%20Metrics%20-%20Functional%20project.png'></img>
 
 ## Data visualization
 
