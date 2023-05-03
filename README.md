@@ -6,8 +6,8 @@ Currently (Nov 2022), Linkedin doesn't provide good metrics about posts, so anyb
 ## What you will find in this repository
 In this github repository you will find an embebed Power BI data visualization that you can access by clicking here and a python script (RPA) in order to get the data you need from Linkedin. All you need is to amend your email and password within the RPA python script which will log you into linkedin with your credentials and it will loop on a timeframe basis your linkedin posts metrics analytics pages in order to get snapshots of that and store the data into a PostgreSql database. Take into accout that you will need to install different modules required for running the RPA python script so please find that info as following in the requirements sections.
 
-## Funcional document (Data workflow)
-You can see as follows the data workflow of this project in order to learn about the different steps involved.
+## Data workflow
+You can see as follows the a representation of the data workflow of this project in order to learn about the different elements involved.
 
 <img width='400' height='300' src='https://github.com/adrianrodriguez-io/linkedin-rpa-python/blob/main/images/Linkedin%20Posts%20Enriched%20Metrics%20-%20Functional%20project.png'></img>
 
